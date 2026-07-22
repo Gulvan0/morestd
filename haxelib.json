@@ -1,0 +1,9 @@
+{
+    "name": "morestd",
+    "url": "",
+    "license": "MIT",
+    "version": "0.1.0",
+    "classPath": "src/",
+    "description": "Small, universal Haxe utilities: timers, iterators, string/array/map extensions, etc.",
+    "contributors": []
+}

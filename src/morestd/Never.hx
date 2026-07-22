@@ -1,0 +1,3 @@
+package morestd;
+
+enum Never {}
