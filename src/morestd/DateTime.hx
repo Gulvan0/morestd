@@ -5,6 +5,8 @@ class DateTime
 	public var roughDateTime:Date;
 	public var trueSeconds:Float;
 
+	private var wholeMinuteUtcMs:Float;
+
 	public static function nowUnixSecs():Int
 	{
 		return Math.ceil(Date.now().getTime() / 1000);
@@ -41,5 +43,12 @@ class DateTime
 	{
 		this.roughDateTime = new Date(year, month, day, hour, min, Math.floor(sec));
 		this.trueSeconds = sec;
+		this.wholeMinuteUtcMs = DateTools.makeUtc(year, month, day, hour, min, 0);
+	}
+
+	/** Milliseconds since the Unix epoch, taking the date and time as UTC **/
+	public function getUnixMs():Float
+	{
+		return wholeMinuteUtcMs + trueSeconds * 1000;
 	}
 }
