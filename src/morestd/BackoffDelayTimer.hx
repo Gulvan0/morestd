@@ -55,6 +55,8 @@ class BackoffDelayTimer
 
     private function timeout()
     {
+        stop(); // a haxe.Timer repeats until stopped
+
         if (delayMs < maxDelayThresholdMs)
             delayMs *= minFactor + factorSpan * Math.random();
         else
